@@ -1,0 +1,150 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    background-image: url("img.png");
+   /*background-color: #10dde0;*/
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   color:white;
+   text-align: center;
+}
+.header {
+  background-color: #000;
+  padding: 0.5rem 0;          
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo-img {
+  height: 50px;               
+  max-width: 90%;
+  object-fit: contain;
+  animation: fadein 0.8s ease-in-out;
+}
+
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.title{
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container{
+   height: 70vh;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+}
+.game{
+    height: 60vmin;
+    width:60vmin;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+    gap:2vmin;
+}
+.box {
+    background-color: gold;
+    height: 18vmin;
+    width: 18vmin;
+    color: darkred;
+    border-radius: 1rem;
+    font-size: 8vmin;
+   
+}
+#resetbtn{
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.25rem;
+    background-color: rgb(63, 53, 9);
+    color: aliceblue;
+    border-radius: 1rem;
+    border: none;
+    
+}
+#newgamebtn{
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.25rem;
+    background-color: rgb(63, 53, 9);
+    color: aliceblue;
+    border-radius: 1rem;
+    border: none;
+}
+#msg{
+    color: azure;
+    font-size: 8vmin;
+}
+.msgcontainer{
+    height: 30vmin;
+}
+.hide{
+    display: none;
+}
+.popup{
+    position: fixed;
+    top :50%;
+    left:50%;
+    transform: translate(-50%,-50%)scale(0.9);
+    background: white;
+    padding: 2rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.25);
+    display:none;
+    z-index: 100;
+    text-align: center;
+    animation: fadein 0.3s ease;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+.popup.show {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%,-50%)scale(1);
+}
+#msg{
+    font-size: 6vmin;
+    color: #000000;
+    padding-bottom: 2rem;
+}
+#newgamebtn{
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    background-color: #10dde0;
+    color: white;
+    border-radius: 12px;
+    font-weight: bold;
+}
+.highlight{
+    background-color: #32cd32;
+    animation:pulse 0.5s infinite alternate;
+}
+@keyframes pulse{
+    from {transform: scale(1);box-shadow: 0 0 5px white;}
+    to{transform:scale(1);box-shadow: 0 0 15px yellow;}
+}
+footer {
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  position: relative;
+  margin-top: 2rem;
+}
+footer a {
+  color: #ffd700;
+  text-decoration: none;
+}
