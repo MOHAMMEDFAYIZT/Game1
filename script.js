@@ -67,13 +67,14 @@ const showWinner=(winner) => {
     disableboxes();
     winSound.play();
     confetti({
-  particleCount: 150,
+  particleCount: 300,
   spread: 80,
   origin: { y: 0.6 }
 });
 
 };
 const checkwinner=() => {
+    let winnerfound = false;
     for(let pattern of winpatterns)
   {
         let pos1val=boxes[pattern[0]].innerText;
@@ -85,17 +86,22 @@ const checkwinner=() => {
          boxes[pattern[0]].classList.add("highlight");
          boxes[pattern[1]].classList.add("highlight");
          boxes[pattern[2]].classList.add("highlight");
+         winnerfound=true;
          showWinner(pos1val);
+         return;
         }
     }
   }
 let filledboxes = [...boxes].every((box) => box.innerText !=="");
-if(filledboxes){
+
+ if(filledboxes && !winnerfound){
     const forcedwinner = Math.random()<0.5? "O": "X" ;
     showWinner(forcedwinner);
     msg.innerText = ` ${forcedwinner} wins in DRAW🎊 `;
-}  
+    
+}
 };
+
 newgamebtn.addEventListener("click",() => {
     popup.classList.remove("show");
     resetgame();
